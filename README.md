@@ -1,110 +1,131 @@
 # 🧮 3jd3rh4ck3r Calculator
 
-**A classic and scientific calculator built with Python and Tkinter.**
+A dark-themed scientific calculator built with Python and Tkinter. Supports basic arithmetic, scientific functions, calculation history, and standalone builds for Linux and Windows.
 
-A simple desktop calculator with a dark interface, scientific functions, repeat-equals functionality, and support for displaying large integer results.
+## 📥 Download
+
+**[⬇️ Download HesapMakinesi for Windows](https://github.com/3jd3rh4ck3r/hesap_makiesi/raw/refs/heads/main/dist/HesapMakinesi.zip)**
+
+1. Download the ZIP file.
+2. Extract its contents.
+3. Run `HesapMakinesi.exe`.
+
+> If Windows displays a security warning, make sure you trust the source before running the application.
 
 ## ✨ Features
 
-- **Classic Mode** — Addition, subtraction, multiplication, division, and modulo.
-- **Scientific Mode** — Sine, cosine, tangent, square root, logarithms, absolute value, factorial, and exponentiation.
-- **Mode Switching** — Switch between classic and scientific modes with a single button.
-- **DEG/RAD Support** — Choose degrees or radians for trigonometric calculations.
-- **Repeat Equals (`=`)** — Press equals repeatedly to repeat the last basic arithmetic operation.
-- **Calculation History** — View previous calculations.
-- **Large Integer Display** — Display large integer results using regular digits instead of scientific notation.
-- **Keyboard Support** — Press `Enter` to calculate and `Esc` to clear the display.
-- **Dark UI** — A dark-themed interface built with Tkinter.
-- **Developer Signature** — `coded by 3jd3rh4ck3r`
+- Basic arithmetic: addition, subtraction, multiplication, and division
+- Modulo and power operations
+- Scientific functions: `sin`, `cos`, `tan`, square root, logarithms, absolute value, and factorial
+- Degree (DEG) and radian (RAD) modes
+- Calculation history
+- Repeat the last arithmetic operation with `=`
+- Dark-themed graphical interface
+- Improved formatting for large integer results
+- Linux executable and Windows executable build support
 
-## 🛠️ Built With
+## 🛠️ Requirements
 
-- Python 3
+To run from source:
+
+- Python 3.9 or newer recommended
 - Tkinter
-- Python Standard Library (`math`, `ast`, `operator`)
 
-## 📋 Requirements
+To build standalone applications:
 
-- Python 3.9 or later recommended
-- Tkinter installed and available on your system
+- PyInstaller
 
-On Debian-based Linux distributions, install Tkinter if necessary:
+## 🚀 Run from Source
 
-```bash
-sudo apt update
-sudo apt install python3-tk
-```
-
-## 🚀 Installation
-
-**1. Clone the repository**
-
-Replace `YOUR_USERNAME` with your GitHub username.
+Clone the repository:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/3jd3rh4ck3r-calculator.git
+git clone https://github.com/3jd3rh4ck3r/hesap_makiesi.git
+cd hesap_makiesi
 ```
 
-**2. Enter the project directory**
-
-```bash
-cd 3jd3rh4ck3r-calculator
-```
-
-**3. Run the calculator**
+Run the calculator:
 
 ```bash
 python3 hesap.py
 ```
 
-No additional Python packages are required when Python and Tkinter are installed.
+## 🐧 Build for Linux
 
-## 🖥️ Usage
+Install the required packages on Debian-based Linux distributions:
 
-1. Launch the application.
-2. Use the number and operator buttons for basic calculations.
-3. Press **Scientific Mode** to access scientific functions.
-4. Use **DEG/RAD** to change the angle unit.
-5. Press `=` to calculate. Press it again to repeat the last supported arithmetic operation.
-6. Open **History** in scientific mode to review previous calculations.
+```bash
+sudo apt update
+sudo apt install python3-tk python3-venv
+```
 
-### Example: Repeat Equals
+Create and activate a virtual environment:
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+python -m pip install pyinstaller
+```
+
+Build the executable:
+
+```bash
+pyinstaller --clean --onefile --windowed --name HesapMakinesi hesap.py
+```
+
+The resulting executable will be located at:
 
 ```text
-5 + 3 = 8
-       = 11
-       = 14
+dist/HesapMakinesi
 ```
+
+Run it with:
+
+```bash
+./dist/HesapMakinesi
+```
+
+## 🪟 Build for Windows
+
+Run these commands on Windows with Python installed:
+
+```powershell
+py -m pip install pyinstaller
+py -m PyInstaller --clean --onefile --windowed --name HesapMakinesi hesap.py
+```
+
+The executable will be created at:
+
+```text
+dist/HesapMakinesi.exe
+```
+
+**Note:** PyInstaller builds for the operating system on which it runs. To create a Windows `.exe` from Linux, use a Windows machine or a Windows-based GitHub Actions workflow.
 
 ## 📁 Project Structure
 
 ```text
-3jd3rh4ck3r-calculator/
+hesap_makiesi/
 ├── hesap.py
 ├── README.md
-└── LICENSE
+└── dist/
+    └── HesapMakinesi.zip
 ```
 
-The `LICENSE` file is optional. Add one if you decide to publish the project under an open-source license.
+The structure above is illustrative; generated build files may differ.
 
-## ⚠️ Notes and Limitations
+## ⚠️ Notes
 
-- Very large integer results can be displayed as regular digits.
-- Floating-point calculations have limited precision.
-- The visible portion of a long number depends on the display width.
-- Repeat-equals functionality is designed for basic binary arithmetic operations.
-- Scientific functions may return an error for invalid inputs, such as the square root of a negative number in the real-number domain.
+- Floating-point calculations have the usual Python precision limitations.
+- Only download and run executable files from sources you trust.
+- Test Linux and Windows builds on their respective operating systems.
 
-## 🔒 Security
-
-The calculator evaluates expressions using a restricted Python AST evaluator rather than unrestricted `eval()`. This is intended to limit which expressions can be executed.
-
-## 👨‍💻 Developer
+## 👨‍💻 Author
 
 **3jd3rh4ck3r**
 
-Created with Python and Tkinter.
+*coded by 3jd3rh4ck3r*
 
----
+## 📜 License
 
-*If you find this project useful, consider giving the repository a ⭐ on GitHub.*
+No license has been specified. Add a `LICENSE` file if you want to define the terms under which others may use, modify, or distribute this project.
