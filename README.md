@@ -4,7 +4,7 @@ A dark-themed scientific calculator built with Python and Tkinter. Supports basi
 
 ## 📥 Download
 
-**[⬇️ Download HesapMakinesi for Windows](https://github.com/3jd3rh4ck3r/hesap_makiesi/raw/refs/heads/main/dist/HesapMakinesi.zip)**
+**[⬇️ Download HesapMakinesi for Windows](https://github.com/3jd3rh4ck3r/hesap_makiesi/blob/main/dist/HesapMakinesi.exe)**
 
 1. Download the ZIP file.
 2. Extract its contents.
